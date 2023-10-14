@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         String user_name = request.getParameter("user_name");
         String user_pwd = request.getParameter("user_pwd");
         User user = new User();

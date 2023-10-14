@@ -33,7 +33,7 @@ public class EventPlannerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         if ("/eventPlannerFindAllEventsAndVenueInfo".equals(request.getServletPath())) {
             // ready to return
             List<Event> events = eventPlannerService.findAllEvents();
@@ -77,7 +77,7 @@ public class EventPlannerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         if ("/eventPlannerAddEvent".equals(request.getServletPath())) {
             try {
                 String event_planner_name = request.getParameter("event_planner_name");
@@ -181,9 +181,9 @@ public class EventPlannerServlet extends HttpServlet {
                 event.setEndTime(new Timestamp(parsedDate.getTime()));
                 eventPlannerService.updateEvent(event);//update
                 String venueList = request.getParameter("venue");
-                System.out.println(eventId+":"+eventName+":"+startTime+":"+endTime);
-                System.out.println(user);
-                System.out.println(venueList);
+//                System.out.println(eventId+":"+eventName+":"+startTime+":"+endTime);
+//                System.out.println(user);
+//                System.out.println(venueList);
 
 
 

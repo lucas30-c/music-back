@@ -32,7 +32,7 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         if("/customerSearch".equals(request.getServletPath())) {
             try{
                 String inputEventName = request.getParameter("inputEventName");
@@ -115,7 +115,7 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         if("/customerBookEvent".equals(request.getServletPath())) {
             Integer user_id = Integer.parseInt(request.getParameter("user_id"));
             Integer event_id = Integer.parseInt(request.getParameter("event_id"));

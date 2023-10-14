@@ -29,7 +29,7 @@ public class AdminServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         if ("/adminFindAllUsers".equals(request.getServletPath())) {
             List<User> users = new ArrayList<User>();
             users = adminService.adminFindAllUsers();
@@ -113,7 +113,7 @@ public class AdminServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        response.setHeader("Access-Control-Allow-Origin", "*");
        if ("/adminVenueSectionCreate".equals(request.getServletPath())) {
            String venueName = request.getParameter("VenueName");
            String venueAddress = request.getParameter("VenueAddress");
